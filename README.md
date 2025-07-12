@@ -1,5 +1,8 @@
 # CODSOFT
 '''__________________TASK 2 - CALCULATOR__________________'''
+
+
+
 class Solution:
     def calculate(self, s: str) -> int:
         i=0
@@ -37,6 +40,10 @@ class Solution:
         
 
 '''________________TASK 3 - PASSWORD GENERATOR________________'''
+
+
+
+
 import random
 import string
 
@@ -54,7 +61,41 @@ if __name__=="__main__":
         random_password = generate_password(password_length)
         print("Your random password is: ",random_password)
 
+
+
+'''__________________TASK 4 - ROCK-PAPER-SCISSORS GAME__________________'''
+
+
+
+def computer_choice():
+    return random.choice(['rock','paper','scissors'])
+def game(player, computer):
+    if player==computer:
+        return "It's a Tie!!"
+    if (player=='rock' and computer=='paper') or (player=='paper' and computer=='scissors') or (player=='scissors' and computer=='rock'):
+        return "Computer Wins"
+    return "Player Wins"
+while True:
+    print("Welcome to the game , type 'exit' to get out of this game!Thank You")
+    player_choice=input("Enter your choice from {rock , paper , scissors}:").lower()
+    if player_choice=='exit':
+        print("GoodBye !")
+        break
+    elif player_choice not in ['rock','paper','scissors']:
+        print("Invalid choice ! Try again...")
+        continue
+    computer = computer_choice()
+    print("computer chose : ",computer)
+    result = game(player_choice, computer)
+    print(result)
+
+
+
 '''__________________TASK 5 - CONTACT BOOK__________________'''
+
+  
+  
+  
   class Contact:
     def __init__(self, name, phone_number, email):
         self.name = name
